@@ -1,8 +1,8 @@
 /** @license
  * 
- * OA Integrated Engine (Utils.js) — Javascript and HTML Interactive DOM & Canvas Framework
+ * General Web Interface Platform (Utils.js) — Javascript and HTML Interactive DOM & Canvas Framework
  * 
- * Author          :   Gordon Goodrum
+ * Author          :   KeyPiece, Gordon Goodrum
  * License         :   Open Source with author attribution for non-commercial, open source projects only.
  * Contact         :   stopgordy@gmail.com
  * 
