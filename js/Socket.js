@@ -17,8 +17,17 @@
 function Socket() {
     this.connected = false;
     this.socket = null;
+    this.registerQueue = [];
 }
-Socket.prototype.connect = function(address) {
+Socket.prototype.register = function (identifier, f) {
+    this.registerQueue.push({
+        identifier: identifier,
+        f: f
+    });
+    console.log("Function has been bound to packet identifier " + identifier);
+};
+
+Socket.prototype.connect = function (address) {
     window.MozWebSocket = window.MozWebSocket || undefined;
     window.WebSocket = window.WebSocket || window.MozWebSocket || undefined;
 
@@ -60,7 +69,12 @@ Socket.prototype.connect = function(address) {
                 //if (message.data.indexOf("undefined") == -1){
                 var json = JSON.parse(message.data);
                 console.log(message.data);
-               // _this.getPacket(json);
+                for (var i = 0; i < _this.registerQueue.length; i++) {
+                    if (json[_this.registerQueue[i].identifier]) {
+                        _this.registerQueue[i].f(json);
+                    }
+                }
+                // _this.getPacket(json);
                 //  }
             }
 
