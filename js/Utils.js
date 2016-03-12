@@ -230,4 +230,8 @@ String.prototype.replaceAll = function(search, replace)
         };
 }());
 
+
+
+var console = console || window.console;
+
 //base64Img = encodeURIComponent(base64Img);
