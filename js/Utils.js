@@ -232,6 +232,54 @@ String.prototype.replaceAll = function(search, replace)
 
 
 
+function timeAgo(dateString) {
+    var rightNow = new Date();
+    var then = new Date(dateString);
+
+    //  if ($.browser.msie) {
+    // IE can't parse these crazy Ruby dates
+    then = Date.parse(dateString.replace(/( \+)/, ' UTC$1'));
+    //}
+
+    var diff = rightNow - then;
+
+    var second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24,
+        week = day * 7;
+
+    if (isNaN(diff) || diff < 0) {
+        return "?"; // return blank string if unknown
+    }
+
+    if (diff < second * 2) {
+        // within 2 seconds
+        return "<div class='stats_info'>right now</div>";
+    }
+
+    if (diff < minute) {
+        return Math.floor(diff / second) + "<div class='stats_info'> seconds uptime</div>";
+    }
+
+
+    if (diff < hour) {
+        return Math.floor(diff / minute) + ":" +(((Math.floor(diff / second) % 60)<10)?"0":"")+ (Math.floor(diff / second) % 60) + "<div class='stats_info'> minutes uptime</div>";
+    }
+
+
+    if (diff < day) {
+        return Math.floor(diff / hour) + ":" + (((Math.floor(diff / minute) % 60)<10)?"0":"")+(Math.floor(diff / minute) % 60) + "<div class='stats_info'>hours uptime</div>";
+    }
+
+
+    if (diff < day * 365) {
+        return Math.floor(diff / day) + "<div class='stats_info'>days uptime</div>";
+    } else {
+        return "over a year ago";
+    }
+}
+
 var console = console || window.console;
 
 //base64Img = encodeURIComponent(base64Img);
