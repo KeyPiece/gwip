@@ -23,25 +23,22 @@ function Kernel() {
 }
 
 Kernel.prototype.init = function () {
- 
+
     if (this.active) {
         return false;
     }
     this.active = true;
     console.log("Kernel has initiated.");
 
-    //this.processes.forEach(function (element, index, array) {
-    //    if (element.stay_focus === true) {
-   //         element.update();
-   //     }
-   // });
-window.onresize = function(){kernel.resize();}
+    window.onresize = function () {
+        kernel.resize();
+    }
     kernelUpdate();
     return true;
 };
 
 Kernel.prototype.update = function () {
-    
+
     //var that = this;
     if (!this.active) {
         return false;
@@ -60,11 +57,11 @@ Kernel.prototype.focus = function (process) {
 
     //var that = this;
     if (!this.active || process.stay_focus || process.has_focus) {
-        console.warn("P:"+process.meta.title+" has been denied focused");
+        console.warn("P:" + process.meta.title + " has been denied focused");
         return false;
     }
 
-    console.log("P:"+process.meta.title+" has been focused");
+    console.log("P:" + process.meta.title + " has been focused");
     // Calls the update function for every registered package
 
     this.processes.forEach(function (element, index, array) {
@@ -73,6 +70,10 @@ Kernel.prototype.focus = function (process) {
             element.has_focus = false;
         }
     });
+    if (!process.has_initialized) {
+        process.init();
+        process.has_initialized = true;
+    }
     process.has_focus = true;
     process.focus();
     return true;
