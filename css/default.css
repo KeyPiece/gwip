@@ -1,0 +1,175 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    //overflow: hidden;
+    width: 100%;
+}
+* {
+    font-family: system, -apple-system, BlinkMacSystemFont,
+      "Helvetica Neue", "Lucida Grande";
+    font-size: 9pt;
+}
+.clr {
+    clear: both;
+}
+
+
+
+
+
+.col-0,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+    float: left;
+}
+
+.col-0 {
+    width: 0%;
+}
+.col-1 {
+    width: 8.3333%;
+}
+.col-2 {
+    width: 16.6666%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-4 {
+    width: 33.3333%;
+}
+.col-5 {
+    width: 41.6666%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-7 {
+    width: 58.3333%;
+}
+.col-8 {
+    width: 66.6666%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-10 {
+    width: 83.3333%;
+}
+.col-11 {
+    width: 91.3333%;
+}
+.col-12 {
+    width: 100%;
+}
+@media screen and (orientation: portrait) {
+    .col-0-m,
+    .col-1-m,
+    .col-2-m,
+    .col-3-m,
+    .col-4-m,
+    .col-5-m,
+    .col-6-m,
+    .col-7-m,
+    .col-8-m,
+    .col-9-m,
+    .col-10-m,
+    .col-11-m,
+    .col-12-m {
+        float: left;
+    }
+    .col-0-m {
+    width: 0%;
+}
+.col-1-m {
+    width: 8.3333%;
+}
+.col-2-m {
+    width: 16.6666%;
+}
+.col-3-m {
+    width: 25%;
+}
+.col-4-m {
+    width: 33.3333%;
+}
+.col-5-m {
+    width: 41.6666%;
+}
+.col-6-m {
+    width: 50%;
+}
+.col-7-m {
+    width: 58.3333%;
+}
+.col-8-m {
+    width: 66.6666%;
+}
+.col-9-m {
+    width: 75%;
+}
+.col-10-m {
+    width: 83.3333%;
+}
+.col-11-m {
+    width: 91.3333%;
+}
+.col-12-m {
+    width: 100%;
+}
+}
+
+
+
+
+.offset-0 {
+    margin-left: 0%;
+}
+.offset-1 {
+    margin-left: 8.3333%;
+}
+.offset-2 {
+    margin-left: 16.6666%;
+}
+.offset-3 {
+    margin-left: 25%;
+}
+.offset-4 {
+    margin-left: 33.3333%;
+}
+.offset-5 {
+    margin-left: 41.6666%;
+}
+.offset-6 {
+    margin-left: 50%;
+}
+.offset-7 {
+    margin-left: 58.3333%;
+}
+.offset-8 {
+    margin-left: 66.6666%;
+}
+.offset-9 {
+    margin-left: 75%;
+}
+.offset-10 {
+    margin-left: 83.3333%;
+}
+.offset-11 {
+    margin-left: 91.3333%;
+}
+.offset-12 {
+    margin-left: 100%;
+}
+
