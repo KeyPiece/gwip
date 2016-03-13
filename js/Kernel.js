@@ -1,11 +1,11 @@
 /** @license
- * 
+ *
  * General Web Interface Platform (Kernel.js) — Javascript and HTML Interactive DOM & Canvas Framework
- * 
+ *
  * Author          :   KeyPiece, Gordon Goodrum
  * License         :   Open Source with author attribution for non-commercial, open source projects only.
  * Contact         :   stopgordy@gmail.com
- * 
+ *
  * Copyright 2015 — Gordon Goodrum. All rights reserved.
  */
 
@@ -17,7 +17,6 @@ function Kernel() {
     this.active = false;
     this.ticks = 0;
     this.processes = [];
-    this.threaded = false;
 
     return this;
 }
@@ -30,16 +29,13 @@ Kernel.prototype.init = function () {
     this.active = true;
     console.log("Kernel has initiated.");
 
-    window.onresize = function () {
-        kernel.resize();
-    }
+    window.onresize = function () {kernel.resize();};
     kernelUpdate();
     return true;
 };
 
 Kernel.prototype.update = function () {
 
-    //var that = this;
     if (!this.active) {
         return false;
     }

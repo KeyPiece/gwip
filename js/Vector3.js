@@ -1,19 +1,19 @@
 /** @license
- * 
+ *
  * General Web Interface Platform (Vector3.js) — Javascript and HTML Interactive DOM & Canvas Framework
- * 
+ *
  * Author          :   KeyPiece, Gordon Goodrum
  * License         :   Open Source with author attribution for non-commercial, open source projects only.
  * Contact         :   stopgordy@gmail.com
- * 
+ *
  * Copyright 2015 — Gordon Goodrum. All rights reserved.
  */
 
 
- //TEMP VECTOR3 CACHE
+//TEMP VECTOR3 CACHE
 var Vec3_TempI = 0,
     Vec3_TempV = new Vec3();
- 
+
 /**
  * @constructor
  */
@@ -79,8 +79,8 @@ Vec3.prototype.divI = function (a) {
     this.z /= a;
     return this;
 };
-Vec3.prototype.random=function(){
-     this.x = Math.random();
+Vec3.prototype.random = function () {
+    this.x = Math.random();
     this.y = Math.random();
     this.z = Math.random();
     return this;
@@ -90,7 +90,7 @@ Vec3.prototype.random=function(){
 console.warn('Function Vec3.rotations should be converted to radians, not degrees');
 /** @type {function(number):Vec3} */
 Vec3.prototype.rotX = function (deg) {
-   // deg *= (Math.PI / 180);
+    // deg *= (Math.PI / 180);
     //var b = new Vec3().set((this.x * Math.cos(a) - this.y * Math.sin(a)), (this.x * Math.sin(a) + this.y * Math.cos(a)), this.z);
     Vec3_TempV.y = (this.y * Math.cos(deg) - this.z * Math.sin(deg));
     Vec3_TempV.z = (this.y * Math.sin(deg) + this.z * Math.cos(deg));
@@ -123,7 +123,7 @@ Vec3.prototype.rotZ = function (deg) {
 
 /** @type {function():Vec3} */
 Vec3.prototype.flipX = function () {
-    this.x*=-1;
+    this.x *= -1;
     return this;
 };
 

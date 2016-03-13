@@ -1,11 +1,11 @@
 /** @license
- * 
+ *
  * General Web Interface Platform (Vector2.js) — Javascript and HTML Interactive DOM & Canvas Framework
- * 
+ *
  * Author          :   KeyPiece, Gordon Goodrum
  * License         :   Open Source with author attribution for non-commercial, open source projects only.
  * Contact         :   stopgordy@gmail.com
- * 
+ *
  * Copyright 2015 — Gordon Goodrum. All rights reserved.
  */
 
@@ -16,7 +16,7 @@
 function Vec2() {
     this.x = 0;
     this.y = 0;
-};
+}
 /** @type {function():Vec2} */
 Vec2.prototype.clear = function () {
     this.x = 0;
@@ -59,7 +59,7 @@ Vec2.prototype.divI = function (amt) {
     this.y /= amt;
     return this;
 };
-/** @type {function(Vec3):Vec3} */
+/** @type {function(Vec2):Vec2} */
 Vec2.prototype.pointTo = function (vec) {
     //var a = this.clone();
     // a.sub(vec).divI(a.dist(vec));
